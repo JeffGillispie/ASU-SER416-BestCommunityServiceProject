@@ -1,8 +1,8 @@
 module.exports = function(app, passport, fs, db) {
 
   // ====================================================
-	// HOME PAGE
-	// ====================================================
+  // HOME PAGE
+  // ====================================================
   app.get('/', function(req, res) {
     var hasUser, email, userid, firstName, lastName;
     // set variables depending on if there is a logged in user
@@ -20,7 +20,7 @@ module.exports = function(app, passport, fs, db) {
       lastName = '';
     }
 
-    console.log('current user = ' + email);
+    //console.log('current user = ' + email);
     res.render('pages/index', {
       hasUser: hasUser,
       email: email,
@@ -31,8 +31,8 @@ module.exports = function(app, passport, fs, db) {
   });
 
   // ====================================================
-	// LOGIN PAGE
-	// ====================================================
+  // LOGIN PAGE
+  // ====================================================
 	app.get('/login', function(req, res){
 		res.render('pages/login', {
 			message: req.flash('loginMessage')
@@ -61,16 +61,16 @@ module.exports = function(app, passport, fs, db) {
 	}));
 
   // ====================================================
-	// LOGOUT PAGE
-	// ====================================================
+  // LOGOUT PAGE
+  // ====================================================
 	app.get('/logout', function(req, res){
 		req.logout();
 		res.redirect('/');
 	});
 
   // ====================================================
-	// PROFILE PAGE
-	// ====================================================
+  // PROFILE PAGE
+  // ====================================================
 	app.get('/profile', isLoggedIn, function(req, res){
 		res.render('pages/profile', {
 			user: req.user[0]
