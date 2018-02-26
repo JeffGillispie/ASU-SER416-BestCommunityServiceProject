@@ -9,7 +9,7 @@
   "description": "Project for SER416.",
   "repository": {
     "type": "git",
-    "url": "https://github.com/JeffGillispie/BoardGameDatabase.git"
+    "url": "https://github.com/JeffGillispie/ASU-SER416-BestCommunityServiceProject"
   },
   "dependencies": {
     "ejs": "latest",
