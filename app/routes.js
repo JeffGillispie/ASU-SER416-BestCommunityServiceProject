@@ -326,6 +326,7 @@ module.exports = function(app, passport, fs, db) {
         userid: (hasUser) ? req.user[0].UserID : '',
         firstName: (hasUser) ? req.user[0].FirstName : '',
         lastName: (hasUser) ? req.user[0].LastName : '',
+        isAdmin: (hasUser) ? req.user[0].IsAdmin : false,
         services: services,
         successMessage: req.flash('successMessage'),
         failMessage: req.flash('failureMessage')
