@@ -1,0 +1,146 @@
+<!-- views/pages/donations -->
+
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <% include ../partials/head %>
+  </head>
+
+  <body class="container">
+
+    <header>
+      <% include ../partials/header %>
+      <script>
+        $(document).ready(function() {
+          $("#checkboxIsAnonymous").change(function () {
+            if (this.checked) {
+              $("#textboxFirstName").val('');
+              $("#textboxFirstName").attr("disabled", "disabled");
+              $("#textboxLastName").val('');
+              $("#textboxLastName").attr("disabled", "disabled");
+              $("#textboxEmail").val('');
+              $("#textboxEmail").attr("disabled", "disabled");
+            } else {
+              $("#textboxFirstName").removeAttr("disabled");
+              $("#textboxFirstName").val('<%= firstName %>');
+              $("#textboxLastName").removeAttr("disabled");
+              $("#textboxLastName").val('<%= lastName %>');
+              $("#textboxEmail").removeAttr("disabled");
+              $("#textboxEmail").val('<%= email %>');
+            }
+          });
+        });
+      </script>
+    </header>
+
+    <main>
+      <h2>Make a Donation</h2>
+
+      <% if (failMessage.length > 0) { %>
+        <div class="alert alert-danger"><%= failMessage %></div>
+      <% } %>
+
+      <% if (successMessage.length > 0) { %>
+        <div class="alert alert-success"><%= successMessage %></div>
+      <% } %>
+
+      <form action="/donations" method="post">
+        <div class="container">
+          <div class="col-sm-6">
+
+            <br /><br />
+
+            <div class="form-group">
+              <label class="control-label col-sm-3">First Name</label>
+              <div class="col-sm-9">
+                <input type="text" class="form-control" value="<%= firstName %>" name="firstName" id="textboxFirstName" />
+              </div>
+            </div>
+
+            <br /><br />
+
+            <div class="form-group">
+              <label class="control-label col-sm-3">Last Name</label>
+              <div class="col-sm-9">
+                <input type="text" class="form-control" value="<%= lastName %>" name="lastName" id="textboxLastName" />
+              </div>
+            </div>
+
+            <br /><br />
+
+            <div class="form-group">
+              <label class="control-label col-sm-3">Email</label>
+              <div class="col-sm-9">
+                <input type="text" class="form-control" value="<%= email %>" name="email" id="textboxEmail" />
+              </div>
+            </div>
+
+            <br /><br />
+
+            <div class="form-group">
+              <label class="control-label col-sm-3">Credit Card #</label>
+              <div class="col-sm-9">
+                <input type="text" class="form-control" name="creditCard" />
+              </div>
+            </div>
+
+            <br /><br />
+
+            <div class="form-group">
+              <label class="control-label col-sm-3">Exp. Date</label>
+              <div class="col-sm-9">
+                <input type="text" class="form-control" name="expDate" />
+              </div>
+            </div>
+
+            <br /><br />
+
+            <div class="form-group">
+              <label class="control-label col-sm-3">CVC Code</label>
+              <div class="col-sm-9">
+                <input type="text" class="form-control" name="cvcCode" />
+              </div>
+            </div>
+
+            <br /><br />
+
+            <div class="form-group">
+              <label class="control-label col-sm-3">Zip Code</label>
+              <div class="col-sm-9">
+                <input type="text" class="form-control" name="zipCode" />
+              </div>
+            </div>
+
+            <br /><br />
+
+            <div class="form-group">
+              <label class="control-label col-sm-3">&nbsp;</label>
+              <div class="col-sm-9">
+                <label class="checkbox-inline"><input type="checkbox" id="checkboxIsAnonymous" />Make Donation Anonymous</label>
+              </div>
+            </div>
+
+            <br /><br />
+
+            <div class="form-group">
+              <label class="control-label col-sm-3">&nbsp;</label>
+              <div class="col-sm-9">
+                <button type="submit" class="btn btn-primary">Submit</button>
+              </div>
+            </div>
+
+            <br /><br />
+
+          </div>
+        </div>
+      </form>
+    </main>
+
+    <footer>
+      <% include ../partials/footer %>
+    </footer>
+
+  </body>
+
+</html>

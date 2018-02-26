@@ -1,0 +1,46 @@
+<!-- views/pages/index -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <% include ../partials/head %>
+</head>
+<body class="container">
+  <header>
+    <% include ../partials/header %>
+  </header>
+
+  <main>
+    <div class="row">
+
+      <div class="col-sm-8">
+        <div class="jumbotron">
+          <h2>Best Community Service</h2>
+          <p>BCS is a non-profit organization that aims to benefit our community by providing various services. See our services page for details. Please support us though volunteering or donations.</p>
+        </div>
+      </div>
+
+      <div class="col-sm-4">
+        <div class="well">
+          <% if (hasUser) { %>
+            <b>Welcome back <%= firstName %></b>
+            <ul>
+              <li><a href="/profile">User Profile</a></li>
+              <!--<li><a href="/">Do other user stuff...</a></li>-->
+            </ul>
+            <a href="/logout" class="btn btn-default btn-sm">Logout</a>
+          <% } else { %>
+            <p>You're currently not logged in. Login or Register to access all features.</p>
+            <a href="/login" class="btn btn-default"><span class="fa fa-user"></span>Login</a>
+            <a href="/signup" class="btn btn-default"><span class="fa fa-user"></span>Register</a>
+          <% } %>
+        </div>
+      </div>
+
+    </div>
+  </main>
+
+  <footer>
+    <% include ../partials/footer %>
+  </footer>
+</body>
+</html>

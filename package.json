@@ -1,0 +1,28 @@
+{
+  "name": "Best-Community-Service",
+  "main": "app.js",
+  "version": "1.0.0",
+  "author": [
+    "Jeff Gillispie"
+  ],
+  "private": true,
+  "description": "Project for SER416.",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/JeffGillispie/BoardGameDatabase.git"
+  },
+  "dependencies": {
+    "ejs": "latest",
+    "express": "^4.6.1",
+    "sqlite3": "~3.1.8",
+    "passport": "~0.1.17",
+    "passport-local": "~0.1.6",
+    "connect-flash": "~0.1.1",
+    "bcrypt-nodejs": "latest",
+    "morgan": "~1.0.0",
+    "body-parser": "~1.0.0",
+    "cookie-parser": "~1.0.0",
+    "express-session": "~1.0.0"
+  },
+  "license": "MIT"
+}

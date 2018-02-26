@@ -1,0 +1,48 @@
+<!-- views/profile -->
+
+<!DOCTYPE html>
+<html>
+<head>
+  <% include ../partials/head %>
+</head>
+<body>
+
+  <header>
+    <% include ../partials/header %>
+  </header>
+
+  <main>
+    <div class="container">
+      <div class="page-header text-center">
+        <h1><span class="fa fa-anchor"></span> Profile Page</h1>
+        <a href="/logout" class="btn btn-default btn-sm">Logout</a>
+      </div>
+      <div class="row">
+        <!-- LOCAL INFORMATION -->
+        <div class="col-sm-6">
+          <div class="well">
+            <h3><span class="fa fa-user"></span>User Profile</h3>
+            <p>
+              <strong>Email</strong>: <%= user.Email %><br />
+              <strong>First Name</strong>: <%= user.FirstName %><br />
+              <strong>Last Name</strong>: <%= user.LastName %><br />
+              <strong>Donations Made</strong>: 12<br />
+              <strong>Donated</strong>: $ 120<br />
+              <strong>Services Purchased</strong>: 3<br/>
+              <strong>Volunteering History</strong>:<br />
+              &nbsp;&nbsp;&nbsp;&nbsp;Spanish Class on 01/27/2018<br />
+              &nbsp;&nbsp;&nbsp;&nbsp;Spanish Class on 01/20/2018<br />
+              &nbsp;&nbsp;&nbsp;&nbsp;Spanish Class on 01/13/2018<br />
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <footer>
+    <% include ../partials/footer %>
+  </footer>
+
+</body>
+</html>
